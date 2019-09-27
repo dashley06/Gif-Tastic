@@ -8,7 +8,7 @@ function travelButtonsCreate (){
     for (var t = 0; t < topics.length; t++){
         //create new button element in HTML for each string
          var a = $("<button>");
-         a.addClass("cities");
+         a.addClass("cities btn btn-info");
          a.attr("data-city", topics[t]);
          a.text(topics[t]);
          $("#travelButtons").append(a);
@@ -18,8 +18,11 @@ travelButtonsCreate();
 
 function findTheGifs(){
 //assigning variable for each on-click events for buttons with the attribute of data-city
-    $("button").on("click", function(){
+    $("button.cities").on("click", function(event){
+        event.preventDefault();
     var city = $(this).attr("data-city");
+    console.log(city);
+    
     
 //assigment of variable for query URL
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + city + "&limit=10&api_key=6eghI0eI6UK6Ox76gtgs2SZhojPlFgJA";
@@ -77,26 +80,33 @@ animateGif();
 //user can input a city to add to the array
         $("#userButton").on("click", function(event){
             event.preventDefault();
+           
             userControls();
 
-function userControls(){
-    
+    function userControls(){
+
 //variable to hold value of the user input box, trim away white space
         var userChoice = $("#userInput").val().trim();
-
+ 
 //add value of user input box to the end of the topics array
         topics.push(userChoice);
-        //console.log(topics);
         $("#travelButtons").empty();
-
-
-//assign the same attribute to the user's guess from the input box
-        userChoice = $(this).attr("data-city");   
+        $("#userInput").val("");
+    
+        $("#message").text("Thanks for adding a new destination!")
+        timedText();
+        
 }
+function timedText() {
+    var clearMessage = $("#message")
+    setTimeout(function(){ 
+        clearMessage.empty(); }, 2000);
+    }
 
 travelButtonsCreate(); 
 findTheGifs();
-   
+
+
 })
 
 

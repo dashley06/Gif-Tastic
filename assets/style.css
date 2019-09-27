@@ -1,5 +1,16 @@
-h1{
-    font: 20px;
+h1,
+h3{
+   
     color: blue;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+#travelButtons {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 5px;
+}
+
+.cities{
+    margin:1px;
+}
+
