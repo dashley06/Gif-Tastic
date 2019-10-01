@@ -15,7 +15,6 @@ function travelButtonsCreate (){
     }
 }
 
-
 function findTheGifs(){
 //assigning a variable for each on-click event for the buttons, with the attribute of data-city
     $("button.cities").on("click", function(event){
@@ -61,7 +60,7 @@ function findTheGifs(){
    //event listener for clicking on gifs to make them still or animated
 $(".image-button").on("click", function(event){
     event.preventDefault();
-   console.log("does this event listener work?"); 
+   //console.log("does this event listener work?"); 
 
 //variables to determine the data-state of each gif
     var state = $(this).attr("data-state");
@@ -85,9 +84,6 @@ $(".image-button").on("click", function(event){
 });
 }
 findTheGifs();
-
-
-
 
 //--------------------------------------------------------------------------------------------------------------
 //USER INPUT
