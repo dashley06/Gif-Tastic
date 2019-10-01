@@ -14,3 +14,7 @@ h3{
     margin:1px;
 }
 
+#message {
+    color: rgb(58, 133, 218);
+    font: 30px;
+}
