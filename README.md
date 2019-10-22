@@ -1,2 +1,2 @@
 # Gif-Tastic
-Hit the Giphy API
+Week 6 Homework Assignment: Hit the Giphy API
